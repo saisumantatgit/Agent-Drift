@@ -334,8 +334,9 @@ ignore_paths:
 | [**Agent-Scribe**](https://github.com/saisumantatgit/Agent-Scribe) | Makes agents remember what they learned | "Nothing is lost." |
 | [**Agent-Cite**](https://github.com/saisumantatgit/Agent-Cite) | Makes agents prove what they claim | "Cite it or it's opinion." |
 | **Agent-Drift** | Makes agents follow what they were told | "Not on my watch." |
+| [**Agent-Litmus**](https://github.com/saisumantatgit/Agent-Litmus) | Makes agents validate their test quality | "Test quality validation." |
 
-PROVE validates your thinking. Trace maps your blast radius. Scribe records your decisions. Cite enforces your evidence. **Drift enforces your instructions.** Together: think rigorously, edit safely, remember everything, prove every claim, follow every instruction.
+PROVE validates your thinking. Trace maps your blast radius. Scribe records your decisions. Cite enforces your evidence. **Drift enforces your instructions.** Litmus validates your tests. Together: think rigorously, edit safely, remember everything, prove every claim, follow every instruction, validate every test.
 
 ---
 
