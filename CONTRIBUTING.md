@@ -58,3 +58,17 @@ Since Agent-Drift is a prompt-based plugin (no runtime code), testing is manual:
 5. Run `/drift-check` and verify detection
 6. Add a constraint with `/drift-fence` and verify enforcement
 7. Run `/drift-report` and verify the verdict
+
+## Submitting Changes
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Make your changes following the conventions above
+4. Commit with a descriptive message (`git commit -m "Add: description of change"`)
+5. Push to your fork (`git push origin feature/your-feature`)
+6. Open a Pull Request against `main`
+
+Pull requests should include:
+- Description of what changed and why
+- Any testing you performed
+- Reference to related issues (if applicable)

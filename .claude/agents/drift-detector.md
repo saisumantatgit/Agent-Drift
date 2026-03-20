@@ -96,7 +96,11 @@ For each finding:
 - `warning`: SCOPE_CREEP, PRIORITY_INVERSION, REQUIREMENT_DRIFT on SHOULD
 - `info`: GOLD_PLATING (minor), REQUIREMENT_DRIFT on MAY
 
-### 7. Compute Drift Score
+### 7. Resolve Previous Findings
+
+Cross-reference current findings against previous findings using requirement/constraint IDs as join keys. Findings present in previous state but absent in current state are "resolved".
+
+### 8. Compute Drift Score
 
 ```
 score = 0
@@ -113,7 +117,7 @@ for each previously-detected finding now resolved:
 score = min(100, max(0, score))
 ```
 
-### 8. Determine Alert Level
+### 9. Determine Alert Level
 
 - 0-10: `GREEN`
 - 11-25: `YELLOW`

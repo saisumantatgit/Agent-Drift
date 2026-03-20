@@ -30,10 +30,12 @@ echo ""
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # Copy core prompts
+if [ -d "prompts" ]; then echo "WARNING: Existing prompts/ directory will be overwritten"; fi
 echo "Installing prompts..."
 cp -r "$SCRIPT_DIR/prompts" .
 
 # Copy references
+if [ -d "references" ]; then echo "WARNING: Existing references/ directory will be overwritten"; fi
 echo "Installing references..."
 cp -r "$SCRIPT_DIR/references" .
 
@@ -65,9 +67,13 @@ case $CLI in
         ;;
     codex)
         if [ -f "AGENTS.md" ]; then
-            echo "" >> AGENTS.md
-            cat "$SCRIPT_DIR/adapters/codex/AGENTS.md" >> AGENTS.md
-            echo "Appended drift protocol to existing AGENTS.md"
+            if ! grep -q "# Agent-Drift" AGENTS.md 2>/dev/null; then
+                echo "" >> AGENTS.md
+                cat "$SCRIPT_DIR/adapters/codex/AGENTS.md" >> AGENTS.md
+                echo "Appended drift protocol to existing AGENTS.md"
+            else
+                echo "Agent-Drift already present in AGENTS.md — skipped"
+            fi
         else
             cp "$SCRIPT_DIR/adapters/codex/AGENTS.md" .
         fi
@@ -78,9 +84,13 @@ case $CLI in
         ;;
     aider)
         if [ -f ".aider.conf.yml" ]; then
-            echo "" >> .aider.conf.yml
-            cat "$SCRIPT_DIR/adapters/aider/.aider.conf.yml" >> .aider.conf.yml
-            echo "Appended drift protocol to existing .aider.conf.yml"
+            if ! grep -q "agent-drift" .aider.conf.yml 2>/dev/null; then
+                echo "" >> .aider.conf.yml
+                cat "$SCRIPT_DIR/adapters/aider/.aider.conf.yml" >> .aider.conf.yml
+                echo "Appended drift protocol to existing .aider.conf.yml"
+            else
+                echo "Agent-Drift already present in .aider.conf.yml — skipped"
+            fi
         else
             cp "$SCRIPT_DIR/adapters/aider/.aider.conf.yml" .
         fi

@@ -15,5 +15,9 @@ Thumbs.db
 # Generated state (drift tracking data)
 .drift/
 
+# Python
+__pycache__/
+*.pyc
+
 # Logs
 *.log

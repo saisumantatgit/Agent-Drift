@@ -43,6 +43,8 @@ Five command journeys, each with a skill and supporting agent:
 - 26-50: ORANGE (significant drift)
 - 51-100: RED (major drift)
 
+Score floor: Minimum 0. Score cap: Maximum 100.
+
 Resolution credit: resolved findings get 60% of their points back.
 
 ## Verdicts

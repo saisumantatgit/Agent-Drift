@@ -126,6 +126,11 @@ Agent-Drift classifies all deviations into 8 drift types. Each type has a defaul
 
 **Why it matters:** Gold plating seems helpful but it adds maintenance burden, increases the attack surface, makes the code harder to understand, and most importantly — it takes time away from the actual requirements. A perfectly polished 3 of 5 features is worse than a working 5 of 5.
 
+### Disambiguation: SCOPE_CREEP vs GOLD_PLATING
+- **SCOPE_CREEP**: Work on items NOT in the spec at all (out-of-scope)
+- **GOLD_PLATING**: Work within scope but far exceeding what was requested (over-engineering)
+- Key test: "Was this item mentioned in the spec?" If no → SCOPE_CREEP. If yes but done excessively → GOLD_PLATING.
+
 ---
 
 ## 8. COMPLETION_HALLUCINATION

@@ -68,7 +68,11 @@ Create a chronological timeline of all events:
 - Each violation resolved
 - Each escalation
 
-### 5. Compute Final Score
+### 5. Resolve Previous Findings
+
+Cross-reference current findings against previous findings using requirement/constraint IDs as join keys. Findings present in previous state but absent in current state are "resolved".
+
+### 6. Compute Final Score
 
 ```
 base_score = latest_check_drift_score
@@ -86,7 +90,7 @@ if all MUST requirements are DELIVERED:
 final_score = min(100, max(0, base_score))
 ```
 
-### 6. Determine Verdict
+### 7. Determine Verdict
 
 | Verdict | Score | Meaning |
 |---------|-------|---------|
@@ -94,7 +98,7 @@ final_score = min(100, max(0, base_score))
 | `PARTIAL_COMPLIANCE` | 11-40 | Most instructions followed, some drift |
 | `NON_COMPLIANT` | 41-100 | Significant deviation from instructions |
 
-### 7. Generate Recommendations
+### 8. Generate Recommendations
 
 Based on the session data, generate 3-5 actionable recommendations:
 
@@ -114,7 +118,7 @@ Based on the session data, generate 3-5 actionable recommendations:
 - Note any drift that was caught and corrected (shows the system working)
 - "This session's constraints would make good project defaults"
 
-### 8. Format Output
+### 9. Format Output
 
 Produce the report in the requested format (summary, detailed, or JSON).
 

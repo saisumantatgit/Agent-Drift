@@ -5,7 +5,9 @@
 # Drift type severity overrides
 # Override the default severity for any drift type.
 severities:
-  REQUIREMENT_DRIFT: error        # Default: error (MUST), warning (SHOULD), info (MAY)
+  # NOTE: This overrides the priority-aware default (error for MUST, warning for SHOULD, info for MAY).
+  # Set to 'auto' to use priority-based severity instead of flat 'error' for all levels.
+  REQUIREMENT_DRIFT: error
   SCOPE_CREEP: warning            # Default: warning
   CONSTRAINT_VIOLATION: error     # Default: inherits from constraint
   TECHNOLOGY_SWAP: error          # Default: error

@@ -18,6 +18,8 @@ arguments:
 
 Invoke the `session-audit` skill with the provided arguments.
 
+Note: If a spec exists but no checks have been run, this command will automatically trigger a drift-analysis before generating the report.
+
 If no drift data exists, inform the user that no spec was locked or no checks were run.
 
 Pass all arguments through to the skill:
