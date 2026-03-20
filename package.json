@@ -1,0 +1,20 @@
+{
+  "name": "agent-drift",
+  "version": "1.0.0",
+  "description": "Agent-Drift — Not on my watch. Continuous drift detection and correction for AI agent workflows. Lock instructions, detect deviation, enforce constraints.",
+  "keywords": [
+    "claude-code-plugin",
+    "drift-detection",
+    "scope-drift",
+    "agent-safety",
+    "instruction-compliance",
+    "constraint-enforcement",
+    "ai-agent-governance"
+  ],
+  "author": "Sai Sumanth Battepati",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saisumantatgit/Agent-Drift"
+  }
+}

@@ -1,0 +1,76 @@
+# Agent-Drift Protocol Configuration
+# Copy this to your project root and customize.
+# Agent-Drift will look for drift-protocol.yaml in the project root or .drift/ directory.
+
+# Drift type severity overrides
+# Override the default severity for any drift type.
+severities:
+  REQUIREMENT_DRIFT: error        # Default: error (MUST), warning (SHOULD), info (MAY)
+  SCOPE_CREEP: warning            # Default: warning
+  CONSTRAINT_VIOLATION: error     # Default: inherits from constraint
+  TECHNOLOGY_SWAP: error          # Default: error
+  PRIORITY_INVERSION: warning     # Default: warning
+  SILENT_DROP: critical           # Default: critical (MUST), error (SHOULD)
+  GOLD_PLATING: info              # Default: info
+  COMPLETION_HALLUCINATION: critical  # Default: critical
+
+# Monitoring settings
+monitoring:
+  auto_check: true                # Enable automatic drift checks
+  check_interval: 10              # Turns between auto-checks (minimum: 5)
+  alert_threshold: 25             # Drift score that triggers an alert
+  interrupt_threshold: 50         # Drift score that interrupts the agent
+
+# Scoring weights (points per finding)
+scoring:
+  critical: 25
+  error: 10
+  warning: 3
+  info: 1
+  resolution_credit: 0.60        # Percentage of points returned on resolution
+  completion_bonus: 5             # Points subtracted when all MUST items delivered
+
+# Verdict thresholds
+verdicts:
+  full_compliance: 10             # Score <= this = FULL_COMPLIANCE
+  partial_compliance: 40          # Score <= this = PARTIAL_COMPLIANCE
+  # Score > partial_compliance = NON_COMPLIANT
+
+# File watching
+# Paths to watch for changes (glob patterns)
+watch_paths:
+  - "src/**"
+  - "lib/**"
+  - "app/**"
+  - "tests/**"
+  - "*.py"
+  - "*.ts"
+  - "*.js"
+  - "*.go"
+  - "*.rs"
+
+# Paths to ignore during drift checks
+ignore_paths:
+  - "node_modules/**"
+  - ".git/**"
+  - ".drift/**"
+  - "__pycache__/**"
+  - "*.pyc"
+  - ".env"
+  - "dist/**"
+  - "build/**"
+  - "*.log"
+
+# Constraint defaults
+constraint_defaults:
+  negative_severity: error        # Default severity for negative constraints
+  boundary_severity: error        # Default severity for boundary constraints
+  style_severity: warning         # Default severity for style constraints
+  technology_severity: error      # Default severity for technology constraints
+
+# Report settings
+reports:
+  include_timeline: true          # Include drift timeline in reports
+  include_evidence: true          # Include file evidence in reports
+  auto_save: false                # Auto-save reports to .drift/reports/
+  format: detailed                # Default report format: summary | detailed | json

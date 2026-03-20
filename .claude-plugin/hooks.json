@@ -1,0 +1,8 @@
+{
+  "hooks": [
+    {
+      "type": "SessionStart",
+      "command": "echo '\u26a1 Agent-Drift loaded. Commands: /drift-lock, /drift-check, /drift-fence, /drift-status, /drift-report'"
+    }
+  ]
+}
